@@ -1,0 +1,23 @@
+- Download and unzip the desired version
+- Run script (in installation folder) to give a user privs to install/upgrade/validate/uninstall ORDS
+	- this script is used if you do not want the SYS AS SYSDBA account
+	- do the following to run the script
+		- connect to the DB with SYSDBA privs
+		(./sqlplus sys/password@//localhost:1521/SODADEV AS SYSDBA)
+		- run the script (@/path/to/installer/ords_installer_privileges.sql exampleuser)
+		- exit
+	- You should now only use the specified user in the script to install/upgrade/validate/uninstall
+  
+  
+  
+  ➜  ords-21.2 export LD_LIBRARY_PATH=/opt/oracle/instantclient_18_5
+➜  ords-21.2 export PATH=$PATH:/opt/oracle/instantclient_18_5   
+
+➜  ords-21.2 docker run  -d --name oracle \                       
+-p 1521:1521 -p 5500:5500 \   
+-e ORACLE_SID=ORADB \
+-e ORACLE_PDB=SODADEV \
+-e ORACLE_PWD="password" \
+-e ORACLE_EDITION=enterprise \
+-v /tmp/volume:/opt/oracle/oradata \
+oracle-19.3:latest
