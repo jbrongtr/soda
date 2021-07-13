@@ -30,8 +30,9 @@ BEGIN
 END;
 /
 
-  
-  
+## SODA_APP ROLE
+
+THIS ROLE WAS GRANTED BY THE SYS USER!!!! THE SCHEMA USER COULD NOT SEE THIS ROLE!!!!!
   
   
 ## Simple test commands
